@@ -206,7 +206,8 @@
     "server": "concurrently \" npm run build \" \"nodemon server/app.js\"",
     "index": "cd index && npm start",
     "build": "npm run build --prefix index",
-    "dev": " cd index && npm run dev "
+    "dev": " cd index && npm run dev ",
+    "app": "node server/app.js"
   },
   "author": "MZmZ",
   "license": "ISC"
