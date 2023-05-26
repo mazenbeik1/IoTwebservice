@@ -36,7 +36,7 @@ io.on('connection',cb)
 
 // app.use(express.static('index/dist'));
 app.use(express.urlencoded({extended:false}))
-
+app.use(cors());
 //INDEX PAGE SERVER REQUESTS
 app.get('*',(req,res)=>{
 //     res.sendFile(path.resolve(__dirname,'../index/dist','index.html'));
