@@ -34,12 +34,12 @@ const PORT = process.env.PORT || 5000;
 
 io.on('connection',cb)
 
-// app.use(express.static('index/dist'));
+// app.use(express.static('dist'));
 app.use(express.urlencoded({extended:false}))
 app.use(cors());
 //INDEX PAGE SERVER REQUESTS
 app.get('*',(req,res)=>{
-//     res.sendFile(path.resolve(__dirname,'../index/dist','index.html'));
+    res.sendFile(path.resolve(__dirname,'../index/dist','index.html'));
     res.setHeader("ACCESS-ALLOW-CONTROL-CREDENTIALS","true");
 })
 
