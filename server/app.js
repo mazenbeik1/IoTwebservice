@@ -5,6 +5,7 @@ const server = http.createServer(app);
 const {Server} = require('socket.io');
 const io = new Server(server);
 const path = require('path');
+const cors = require('cors');
 
 
 // const signup = require('./routes/signup');
@@ -33,12 +34,13 @@ const PORT = process.env.PORT || 5000;
 
 io.on('connection',cb)
 
-app.use(express.static('index/dist'));
+// app.use(express.static('index/dist'));
 app.use(express.urlencoded({extended:false}))
 
 //INDEX PAGE SERVER REQUESTS
 app.get('*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'../index/dist','index.html'));
+//     res.sendFile(path.resolve(__dirname,'../index/dist','index.html'));
+    res.setHeader("ACCESS-ALLOW-CONTROL-CREDENTIALS","true");
 })
 
 app.use('/iot',iot);
